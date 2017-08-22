@@ -1,0 +1,34 @@
+This is assignment 2.1
+
+1.	I have created new file using vi saved to local file system
+2. 	displayed contents using cat
+3. 	I copied a max-temp.txt to the hdfs file system using copyFromLocal
+4. 	I used modified the permissions using hadoop fs -chmod 770 to give only owner and group full access 
+5 	Performed a hadoop fs -ls to show file and permissions
+
+
+[acadgild@localhost ~]$ vi max-temp.txt
+[acadgild@localhost ~]$ cat max-temp.txt
+10-01-1990,10
+10-02-1991,20
+10-01-1990,30
+10-01-1990,25
+10-02-1991,40
+10-01-1990,15
+10-01-1990,24
+10-02-1991,10
+10-01-1990,18
+10-01-1990,14
+10-02-1991,27
+10-01-1990,22
+[acadgild@localhost ~]$ pwd
+/home/acadgild
+[acadgild@localhost ~]$ hadoop fs -copyFromLocal max-temp.txt /user/acadgild/hadoop
+
+[acadgild@localhost ~]$ hadoop fs -chmod 770 /user/acadgild/hadoop/max-temp.txt
+
+[acadgild@localhost ~]$ hadoop fs -ls /user/acadgild/hadoop/max-temp.txt
+
+-rwxrwx---   1 acadgild supergroup        168 2017-08-22 21:10 /user/acadgild/hadoop/max-temp.txt
+
+
